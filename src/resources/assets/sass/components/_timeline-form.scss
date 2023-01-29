@@ -1,0 +1,44 @@
+.post-form {
+  .title-input, .content-input {
+    width: 100%;
+    border: 0;
+    outline: 0;
+  }
+  .title-input::placeholder, .content-input::placeholder {
+    color: rgba(2, 1, 10, 0.4);
+  }
+  .title-input {
+    font-size: 24px;
+    margin-bottom: 0.5rem;
+  }
+  .content-input {
+    font-weight: normal;
+    font-family: $open-sans-font;
+  }
+  .form-footer {
+    position: relative;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 1rem;
+    background-color: $violet;
+    color: $white;
+    .icon {
+      padding: 0 14px;
+    }
+    .picker {
+      position: absolute;
+      top: 0;
+      width: 25px;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      border: 0;
+    }
+  }
+  .absolute-container {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    z-index: 5;
+  }
+}

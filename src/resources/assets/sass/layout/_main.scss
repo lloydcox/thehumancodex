@@ -1,0 +1,24 @@
+.main {
+  position: relative;
+  padding: 24px 0;
+  &.has-wrapper {
+    margin-top: $navbar-height;
+    min-height: calc(100vh - #{$navbar-height});
+  }
+  &.has-subnav-wrapper {
+    margin-top: $navbar-height + $sub-navbar-height;
+    min-height: calc(100vh - #{$navbar-height + $sub-navbar-height});
+  }
+}
+
+.main-container {
+  max-width: 628px;
+  width: 100%;
+  margin: 0 auto;
+  &.is-narrow {
+    max-width: 480px;
+  }
+  @include touch {
+    padding: 0 1rem;
+  }
+}

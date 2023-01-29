@@ -1,0 +1,140 @@
+.landing-column {
+  position: relative;
+  min-height: 1000px;
+  overflow: hidden;
+  padding: 0;
+  transition: all 1s;
+  @include fullhd {
+    min-height: 100vh;
+  }
+  @include touch {
+    text-align: center;
+    min-height: auto;
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+    padding: 240px 128px 40px 128px;
+    width: 100%;
+    box-sizing: border-box;
+    @include touch {
+      padding: 5rem;
+    }
+    @include mobile {
+      padding: 1rem 1.5rem 3rem 1.5rem;
+    }
+  }
+  .slides .slide {
+    margin-top: 240px;
+    @include touch {
+      margin-top: 0;
+    }
+  }
+  .ball {
+    display: block;
+    width: 60vw;
+    height: 60vw;
+    border-radius: 60vw;
+    background-color: $white-ter;
+    position: absolute;
+    top: -34vw;
+    transition: all 1s;
+    @include touch {
+      display: none;
+    }
+    &.is-small.is-static {
+      width: 30vw;
+      height: 30vw;
+      top: -15vw;
+      left: 10vw;
+      z-index: 2;
+      background-color: transparent
+    }
+    &.left {
+      left: -30vw;
+    }
+    &.center {
+      left: -5vw;
+    }
+    &.right {
+      left: 20vw;
+    }
+  }
+  &.is-purple, &.is-orange, &.is-blue {
+    .page-title {
+      color: $primary-light;
+    }
+    .page-subtitle, p{
+      color: $white;
+    }
+    p {
+      opacity: 0.6;
+    }
+    .ball.is-small.is-static {
+      background-color: $primary-light;
+    }
+  }
+  &.is-purple {
+    background-color: $purple;
+    .ball {
+      background-color: $purple-darker;
+    }
+  }
+  &.is-orange {
+    background-color: $orange;
+    .ball {
+      background-color: $orange-darker;
+    }
+  }
+  &.is-blue {
+    background-color: $primary;
+    .ball {
+      background-color: $white;
+    }
+  }
+  .dots {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    @include touch {
+      justify-content: center;
+    }
+    .dot-container {
+      padding: 4px;
+      cursor: pointer;
+      .dot {
+        display: inline-block;
+        height: 8px;
+        width: 8px;
+        border-radius: 50px;
+        margin: 8px;
+        background-color: rgba(255, 255, 255, .5);
+        box-sizing: content-box;
+        &.is-active {
+          border: 8px solid #fff;
+          margin: 0px;
+        }
+      }
+    }
+  }
+  .landing-column-footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 1rem 60px;
+    box-sizing: border-box;
+    z-index: 5;
+    @include touch {
+      position: relative;
+    }
+    .level-item {
+      font-size: 12px;
+      @include desktop-only {
+        padding: 0 1rem;
+      }
+    }
+  }
+  .button {
+    min-width: 264px;
+  }
+}

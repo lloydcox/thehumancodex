@@ -1,0 +1,7 @@
+createcontainer:
+	docker-compose build && docker-compose up
+
+# createdcontainer-detached:
+# 	docker-compose build && docker-compose up -d
+
+.PHONY: createcontainer

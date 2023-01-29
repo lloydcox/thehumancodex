@@ -1,0 +1,33 @@
+$title-color: $black;
+$title-size: 40px;
+$title-weight: 500;
+$title-line-height: 56px;
+
+$subtitle-color: $grey;
+$subtitle-size: 18px;
+$subtitle-weight: 500;
+$subtitle-line-height: 32px;
+
+.page-title {
+  color: $title-color;
+  font-size: $title-size;
+  font-weight: $title-weight;
+  line-height: $title-line-height;
+  margin-bottom: 1rem;
+}
+.page-subtitle {
+  color: $subtitle-color;
+  font-size: $subtitle-size;
+  font-weight: $subtitle-weight;
+  line-height: $subtitle-line-height;
+  font-family: $open-sans-font;
+  margin-bottom: 1.5rem;
+}
+
+.page-header {
+    margin-bottom: 32px;
+}
+
+.title:not(.is-spaced) + .subtitle {
+  margin-top: -1rem;
+}

@@ -1,0 +1,11 @@
+.profile-switcher {
+  @extend .card;
+  font-weight: bold;
+  text-align: left;
+  &.is-centered {
+    .columns {
+      justify-content: center;
+      text-align: center;
+    }
+  }
+}

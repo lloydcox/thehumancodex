@@ -1,0 +1,125 @@
+@extends('layouts.user')
+
+@section('main')
+    <section class="main-container">
+        <section class="spacer is-large">
+            <h5 class="section-name">Access Your Information</h5>
+            <div class="card">
+                <div class="card-body">
+                    <p class="text-small-para">
+                        Here is a list of your THC information that you can access at any time. We've categorised
+                        this information by type so you can easily find what you're looking for. Our
+                        <a href="/policy" target="_blank">Privacy Policy</a> has more information about how we collect
+                        and use your information, how it's shared and how long we retain it for. It also outlines your
+                        rights and how you can exercise them, and how we operate and transfer your information as
+                        part of our global services.
+                    </p>
+                    <p class="text-small-para mt-3">You can choose to <a href="{{route('download_data')}}">download your information</a>  if you'd like a copy of it.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header justify-content-between">
+                    <h6 class="text-left line-height-none">Your Information <i class="fas fa-info-circle font"></i></h6>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <a href="/settings/access-data/moments">
+                            <div class="card mb-3 info-type-box">
+                                <div class="row no-gutters">
+                                    <div class="col-md-2 text-center my-auto p-2">
+                                        <img class="img-fluid" src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJDYXBhXzEiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUxMiA1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMiIgY2xhc3M9IiI+PGcgdHJhbnNmb3JtPSJtYXRyaXgoMSAwIDAgMSAwIDApIj48cGF0aCBkPSJtNDM2LjczMSAzNzYuNzMyYzQ4LjUzOS00OC41MzggNzUuMjY5LTExMi43MjMgNzUuMjY5LTE4MC43MzIgMC04LjI4NC02LjcxNi0xNS0xNS0xNWgtNDUuNTQ4Yy0yLjM0Ny0zMi4xOTMtMTIuMjU1LTYyLjcxNy0yOS4wNzktODkuNTE2IDEwLjU5Mi0xNy4zMjQgOC40MS00MC4zMTMtNi41NjctNTUuMjktMTUuMDQ1LTE1LjA0NC0zOC4xNzUtMTcuMTc2LTU1LjUyNi02LjQxOS0zMS4zMDQtMTkuNTE1LTY3LjExNy0yOS43NzUtMTA0LjI4LTI5Ljc3NS01MS44OTggMC0xMDAuNzk3IDE5Ljg5Mi0xMzcuNjg4IDU2LjAxLTM0LjA2MSAzMy4zNDYtNTQuMjYgNzcuMjc4LTU3Ljc2MyAxMjQuOTloLTQ1LjU0OWMtOC4yODQgMC0xNSA2LjcxNi0xNSAxNSAwIDY4LjAwOSAyNi43MyAxMzIuMTk0IDc1LjI2OSAxODAuNzMyIDM1LjA3NyAzNS4wNzggNzguMzMgNTguNzU4IDEyNS4yOSA2OS4xOTgtOS43MjcgMTAuMjQyLTE2LjI0MSAyMi42NTQtMTkuMDIxIDM2LjA3aC0xNi41MzhjLTguMjg0IDAtMTUgNi43MTYtMTUgMTVzNi43MTYgMTUgMTUgMTVoMTgxYzguMjg0IDAgMTUtNi43MTYgMTUtMTVzLTYuNzE2LTE1LTE1LTE1aC0xNi41MDljLTIuNzk1LTEzLjcxNi05LjM1NC0yNi4wNzMtMTguNTM2LTM1Ljk2NiA0Ny4xNDgtMTAuMzg1IDkwLjU3OC0zNC4xMDMgMTI1Ljc3Ni02OS4zMDJ6bS0xODAuNzMxIDQ1LjI2OGMtNjEuMDYzIDAtMTE2LjUzNy0yNC4zNTMtMTU3LjI0OS02My44NDQgOC4zOTQgNy4xOTcgMTguODI0IDEwLjgwOSAyOS4yNjIgMTAuODA5IDguNDEgMCAxNi44MTQtMi4zNDcgMjQuMTU1LTcuMDIgMzEuMjQ4IDE5LjY5OCA2Ni45MDQgMzAuMDU1IDEwMy44MzIgMzAuMDU1IDUyLjA4NiAwIDEwMS4yMzItMjAuNDYxIDEzOC4zODYtNTcuNjE0IDMzLjU2NS0zMy41NjUgNTMuNTAxLTc2LjkxOSA1Ny4wNC0xMjMuMzg2aDMwLjA2NGMtNy43NDggMTE3LjY0OS0xMDUuOTE0IDIxMS0yMjUuNDkgMjExem0tNjYuNDEtMjYzLjY1OWMxMC43MTgtMTkuNDA1IDI5LjMxNy0zMi43NjYgNTEuNDEtMzYuOTQ1djE0OS4wNzFjLTE0LjMxMy0yLjk0OS0yNy42MDktMTAuMDkzLTM4LjQzOS0yMC44NDEtNC45NzUtNC45MzctOS4xNTMtMTAuMzc4LTEyLjU0LTE2LjI0MyAxMi4wMzktOC4wODUgMTkuOTc5LTIxLjgyMyAxOS45NzktMzcuMzgzIDAtMTUuNzQzLTguMTMyLTI5LjYxNS0yMC40MS0zNy42NTl6bTE2Mi41NzctNTguNTA3YzguNzcyIDguNzcyIDIwLjI5NiAxMy4xNTggMzEuODE5IDEzLjE1OCA1LjAyNCAwIDEwLjA0OC0uODM1IDE0Ljg0NC0yLjUwMiAxNS4xOTQgMjUuNDUgMjMuMTcgNTQuNzQ1IDIzLjE3IDg1LjUxIDAgODYuNDc2LTY2LjQ3MSAxNTcuNzA3LTE1MSAxNjUuMzE1di02MC4zOTJjMjIuNDE0LTMuMjI3IDQzLjIyNy0xMy42NTggNTkuNzQ2LTMwLjE3NyA4LjkwMS04LjkwMSAxNi4wMDUtMTguOTcgMjEuMjIxLTMwLjAyNiAyMi40ODQtMi40ODIgNDAuMDMzLTIxLjU4NiA0MC4wMzMtNDQuNzIgMC0yMi45MDYtMTcuMjA4LTQxLjg1Ni0zOS4zNzMtNDQuNjM1LTcuNzcyLTE3LjE5NC0yMC4xMTYtMzEuODIzLTM2LjE4NC00Mi43MDQtMTMuNTc4LTkuMTk1LTI5LjMxNC0xNS4yMi00NS40NDMtMTcuNTU3di02MC40MzVjMjQuOTUzIDIuMjEzIDQ4Ljg5MiA5Ljk0MiA3MC40MjkgMjIuNzUzLTUuMzY4IDE1LjczOS0xLjc5MyAzMy44ODEgMTAuNzM4IDQ2LjQxMnptLTMwLjIwOCAxMzMuNTM2Yy0zLjM2MyA1LjgyNS03LjUwMiAxMS4yMzktMTIuNDI2IDE2LjE2NC0xMC44MTEgMTAuODEtMjQuMTQxIDE3Ljk5MS0zOC41MzMgMjAuOTQzdi0xNDguOTg4YzIxLjc2MiA0LjM1NCA0MC44MSAxNy45NTkgNTEuNDk2IDM2Ljc5Ny0xMi4zMjYgOC4wMzYtMjAuNDk2IDIxLjkzNS0yMC40OTYgMzcuNzE0IDAgMTUuNTUyIDcuOTMxIDI5LjI4NCAxOS45NTkgMzcuMzd6bS04MC45NTktMjAyLjcxOHY2MC4zNzljLTE3LjI5NSAyLjM1OS0zMy41NDQgOC43OS00Ny42MzMgMTguOTgtMTQuNzg3IDEwLjY5NS0yNi4zMTIgMjQuODQ2LTMzLjc5IDQxLjMyNy0yMi4yNjQgMi42ODgtMzkuNTc3IDIxLjY4NS0zOS41NzcgNDQuNjYyIDAgMjMuMTI1IDE3LjUzNiA0Mi4yMjQgNDAuMDA4IDQ0LjcxNyA1LjI1MiAxMS4xNDYgMTIuNDIzIDIxLjI3NCAyMS40MjEgMzAuMjAzIDE2LjUzNSAxNi40MDkgMzcuMjg1IDI2Ljc3NyA1OS41NzEgMjkuOTk5djYwLjM5NWMtMjQuODYtMi4yNjEtNDguNzU0LTEwLjEzMS03MC4yODgtMjMuMTczIDUuMTU1LTE1LjYzNyAxLjUzNy0zMy41NTktMTAuODc5LTQ1Ljk3NC0xMi40MzEtMTIuNDMtMzAuMzg0LTE2LjA0My00Ni4wMzUtMTAuODU4LTE1LjYwNy0yNS43NDUtMjMuNzk4LTU0Ljk4MS0yMy43OTgtODUuMzA5IDAtODguMDIgNjUuMjAyLTE1Ny45OTQgMTUxLTE2NS4zNDh6bS0yMTAuNDkgMTgwLjM0OGgzMC4wNjFjMi40MSAzMS42NTYgMTIuNDQzIDYxLjk2IDI5LjQ0OCA4OC44ODktMTAuNDMyIDE2LjQ0NS05LjE1NiAzOC4yMjEgMy44MjUgNTMuMzYtMzYuMjMtMzcuMzUxLTU5LjcwNC04Ny4xMy02My4zMzQtMTQyLjI0OXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzIwMjA5NSIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48L2c+IDwvc3ZnPg==" />
+                                    </div>
+                                    <div class="col-md-10 text-left">
+                                        <div class="card-body p-2">
+                                            <h6>Moments</h6>
+                                            <p class="card-text text-small-para"><small class="text-muted">Moments you have posted on THC</small></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <a href="/settings/access-data/comments">
+                                <div class="card mb-3 info-type-box">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-2 text-center my-auto p-2">
+                                            <img class="img-fluid" src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJDYXBhXzEiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDUxMiA1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMiIgY2xhc3M9IiI+PGc+PHBhdGggZD0ibTQ2NyAzMWgtMzAyYy0yNC44MTMgMC00NSAyMC4xODctNDUgNDV2MTVoLTE1Yy0yNC44MTMgMC00NSAyMC4xODctNDUgNDV2MTVoLTE1Yy0yNC44MTMgMC00NSAyMC4xODctNDUgNDV2MTgwYzAgMjQuODEzIDIwLjE4NyA0NSA0NSA0NWgxNXY0NWMwIDUuNTMyIDMuMDQ1IDEwLjYxNSA3LjkyMiAxMy4yMjUgNC44NjUgMi42MDQgMTAuNzg0IDIuMzMyIDE1LjM5OC0uNzQ0bDg2LjIyMi01Ny40ODFoMTc3LjQ1OGMyNC44MTMgMCA0NS0yMC4xODcgNDUtNDV2LTE1aDE1YzI0LjgxMyAwIDQ1LTIwLjE4NyA0NS00NXYtMTVoMTVjMjQuODEzIDAgNDUtMjAuMTg3IDQ1LTQ1di0xODBjMC0yNC44MTMtMjAuMTg3LTQ1LTQ1LTQ1em0tMTA1IDM0NWMwIDguMjcxLTYuNzI5IDE1LTE1IDE1aC0xODJjLTIuOTYxIDAtNS44NTYuODc2LTguMzIgMi41MTlsLTY2LjY4IDQ0LjQ1M3YtMzEuOTcyYzAtOC4yODQtNi43MTYtMTUtMTUtMTVoLTMwYy04LjI3MSAwLTE1LTYuNzI5LTE1LTE1di0xODBjMC04LjI3MSA2LjcyOS0xNSAxNS0xNWgzMDJjOC4yNzEgMCAxNSA2LjcyOSAxNSAxNXptNjAtNjBjMCA4LjI3MS02LjcyOSAxNS0xNSAxNWgtMTV2LTEzNWMwLTI0LjgxMy0yMC4xODctNDUtNDUtNDVoLTI1N3YtMTVjMC04LjI3MSA2LjcyOS0xNSAxNS0xNWgzMDJjOC4yNzEgMCAxNSA2LjcyOSAxNSAxNXptNjAtNjBjMCA4LjI3MS02LjcyOSAxNS0xNSAxNWgtMTV2LTEzNWMwLTI0LjgxMy0yMC4xODctNDUtNDUtNDVoLTI1N3YtMTVjMC04LjI3MSA2LjcyOS0xNSAxNS0xNWgzMDJjOC4yNzEgMCAxNSA2LjcyOSAxNSAxNXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzIwMjA5NSIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48cGF0aCBkPSJtMjg3IDI0MWgtMTgyYy04LjI4NCAwLTE1IDYuNzE2LTE1IDE1czYuNzE2IDE1IDE1IDE1aDE4MmM4LjI4NCAwIDE1LTYuNzE2IDE1LTE1cy02LjcxNi0xNS0xNS0xNXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzIwMjA5NSIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48cGF0aCBkPSJtMjg3IDMwMWgtMTgyYy04LjI4NCAwLTE1IDYuNzE2LTE1IDE1czYuNzE2IDE1IDE1IDE1aDE4MmM4LjI4NCAwIDE1LTYuNzE2IDE1LTE1cy02LjcxNi0xNS0xNS0xNXoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzIwMjA5NSIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48L2c+IDwvc3ZnPg==" />
+                                        </div>
+                                        <div class="col-md-10 text-left">
+                                            <div class="card-body p-2">
+                                                <h6>Comments</h6>
+                                                <p class="card-text text-small-para"><small class="text-muted">Comments you have made on THC</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <a href="/settings/access-data/kudos">
+                                <div class="card mb-3 info-type-box">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-2 text-center my-auto p-2">
+                                            <img class="img-fluid" src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIj48Zz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0zNDYsMGMtNS41MjIsMC0xMCw0LjQ3OC0xMCwxMHY0NmMwLDUuNTIyLDQuNDc4LDEwLDEwLDEwYzUuNTIyLDAsMTAtNC40NzgsMTAtMTBWMTBDMzU2LDQuNDc4LDM1MS41MjIsMCwzNDYsMHoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzIwMjA5NSIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTwvZz4KPC9nPjxnPgoJPGc+CgkJPHBhdGggZD0iTTExNiwzMTJjLTUuNTIsMC0xMCw0LjQ4LTEwLDEwYzAsNS41Miw0LjQ4LDEwLDEwLDEwczEwLTQuNDgsMTAtMTBDMTI2LDMxNi40OCwxMjEuNTIsMzEyLDExNiwzMTJ6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiMyMDIwOTUiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik00ODYsMjkyYzAtMjIuMDU2LTE3Ljk0NC00MC00MC00MGgtNzQuNjUyYzExLjU1Ny0yOS42MDMsMTYuMjM1LTY0LjQ0NywxNS4zMzMtOTUuNDY0ICAgIGMtMC4xNzItNS45MTktMC4zOTktOS4zNDItMC43MDYtMTEuNDk3QzM4NS40NTgsMTIzLjQzMiwzNjcuNzE2LDEwNiwzNDYsMTA2Yy0yMi4wNTYsMC00MCwxNy45NDQtNDAsNDB2MTAgICAgYzAsNjMuMjQ2LTgxLjIxNCw5OC43ODEtMTQyLjUwNCwxMTQuMDE5QzE1OC44NjIsMjU5LjQyNSwxNDguMjg0LDI1MiwxMzYsMjUySDM2Yy01LjUyMiwwLTEwLDQuNDc4LTEwLDEwdjI0MCAgICBjMCw1LjUyMiw0LjQ3OCwxMCwxMCwxMGgxMDBjMTIuMjAyLDAsMjIuNzE5LTcuMzI3LDI3LjQwMS0xNy44MDljNS4wNzUsMS4zMDIsOS43ODYsMi41MzIsMTQuMTM1LDMuNjY4ICAgIEMyMTIuNDUxLDUwNi45NzgsMjMxLjY4NCw1MTIsMjc4LjQ2LDUxMkgzODZjMjIuMDU2LDAsNDAtMTcuOTQ0LDQwLTQwYzAtOC4yMjQtMi40OTctMTUuODc0LTYuNzctMjIuMjM4ICAgIEM0MzQuNjc4LDQ0NC4zNTksNDQ2LDQyOS41OTksNDQ2LDQxMmMwLTguMTk0LTIuNDM2LTE1Ljg2OS02LjY5Ni0yMi4yNjJDNDU0LjY4NCwzODQuMzI2LDQ2NiwzNjkuNiw0NjYsMzUyICAgIGMwLTguMjI0LTIuNDk3LTE1Ljg3NC02Ljc3LTIyLjIzOEM0NzQuNjc4LDMyNC4zNTksNDg2LDMwOS41OTksNDg2LDI5MnogTTE0Niw0ODJjMCw1LjUxNC00LjQ4NiwxMC0xMCwxMEg0NlYyNzJoOTAgICAgYzUuNTE0LDAsMTAsNC40ODYsMTAsMTBWNDgyeiBNNDQ2LDMxMmMtMjEuNDQ5LDAtMjYuNTYyLDAtNTAsMGMtNS41MjIsMC0xMCw0LjQ3OC0xMCwxMGMwLDUuNTIyLDQuNDc4LDEwLDEwLDEwaDMwICAgIGMxMS4wMjgsMCwyMCw4Ljk3MiwyMCwyMGMwLDExLjA0Ni04Ljk1NCwyMC0yMCwyMGgtNTBjLTUuNTIyLDAtMTAsNC40NzgtMTAsMTBjMCw1LjUyMiw0LjQ3OCwxMCwxMCwxMGgzMCAgICBjMTAuODk3LDAsMjAsOC43MDUsMjAsMjBjMCwxMS4wNDYtOC45NTQsMjAtMjAsMjBjLTIxLjQ0OSwwLTI2LjU2MiwwLTUwLDBjLTUuNTIyLDAtMTAsNC40NzgtMTAsMTBjMCw1LjUyMiw0LjQ3OCwxMCwxMCwxMGgzMCAgICBjMTEuMDI4LDAsMjAsOC45NzIsMjAsMjBzLTguOTcyLDIwLTIwLDIwSDI3OC40NmMtNDQuMjA3LDAtNjEuNDczLTQuNTA5LTk1Ljg3LTEzLjQ5MmMtNS4wMzktMS4zMTYtMTAuNTY2LTIuNzU5LTE2LjU5LTQuMjk1ICAgIFYyOTAuMDI1QzIzOC4zNjgsMjcyLjc4NywzMjYsMjMwLjcxMSwzMjYsMTU2di0xMGMwLTExLjAyOCw4Ljk3Mi0yMCwyMC0yMGMxMS4wMDgsMCwxOS45NzksOC45NTgsMjAsMTkuOTY5VjE0NiAgICBjMCw0LjM0Niw1LjQyNCw1Ny42ODMtMTYuMzI2LDEwNkgzMTZjLTUuNTIyLDAtMTAsNC40NzgtMTAsMTBjMCw1LjUyMiw0LjQ3OCwxMCwxMCwxMGM2Ljk4MywwLDExOC42MDIsMCwxMzAsMCAgICBjMTEuMDI4LDAsMjAsOC45NzIsMjAsMjBDNDY2LDMwMy4wNDYsNDU3LjA0NiwzMTIsNDQ2LDMxMnoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzIwMjA5NSIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTwvZz4KPC9nPjxnPgoJPGc+CgkJPHBhdGggZD0iTTExNiwzNTJjLTUuNTIyLDAtMTAsNC40NzgtMTAsMTB2ODBjMCw1LjUyMiw0LjQ3OCwxMCwxMCwxMGM1LjUyMiwwLDEwLTQuNDc4LDEwLTEwdi04MEMxMjYsMzU2LjQ3OCwxMjEuNTIyLDM1MiwxMTYsMzUyICAgIHoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzIwMjA5NSIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTwvZz4KPC9nPjxnPgoJPGc+CgkJPHBhdGggZD0iTTI2NiwxMjZoLTQwYy01LjUyMiwwLTEwLDQuNDc4LTEwLDEwYzAsNS41MjIsNC40NzgsMTAsMTAsMTBoNDBjNS41MjIsMCwxMC00LjQ3OCwxMC0xMEMyNzYsMTMwLjQ3OCwyNzEuNTIyLDEyNiwyNjYsMTI2ICAgIHoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzIwMjA5NSIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTwvZz4KPC9nPjxnPgoJPGc+CgkJPHBhdGggZD0iTTQ2NiwxMjZoLTQwYy01LjUyMiwwLTEwLDQuNDc4LTEwLDEwYzAsNS41MjIsNC40NzgsMTAsMTAsMTBoNDBjNS41MjIsMCwxMC00LjQ3OCwxMC0xMEM0NzYsMTMwLjQ3OCw0NzEuNTIyLDEyNiw0NjYsMTI2ICAgIHoiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzIwMjA5NSIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD4KCTwvZz4KPC9nPjxnPgoJPGc+CgkJPHBhdGggZD0iTTQzNy45MjEsNDQuMDc5Yy0zLjkwNi0zLjkwNC0xMC4yMzYtMy45MDQtMTQuMTQzLDBsLTI4LjI3OSwyOC4yNzljLTMuOTA1LDMuOTA1LTMuOTA1LDEwLjIzNywwLDE0LjE0MyAgICBjMy45MDcsMy45MDUsMTAuMjM2LDMuOTA0LDE0LjE0MywwbDI4LjI3OS0yOC4yNzlDNDQxLjgyNiw1NC4zMTcsNDQxLjgyNiw0Ny45ODUsNDM3LjkyMSw0NC4wNzl6IiBkYXRhLW9yaWdpbmFsPSIjMDAwMDAwIiBjbGFzcz0iYWN0aXZlLXBhdGgiIHN0eWxlPSJmaWxsOiMyMDIwOTUiIGRhdGEtb2xkX2NvbG9yPSIjMDAwMDAwIj48L3BhdGg+Cgk8L2c+CjwvZz48Zz4KCTxnPgoJCTxwYXRoIGQ9Ik0yOTYuNTAxLDcyLjM1OGwtMjguMjc5LTI4LjI3OWMtMy45MDYtMy45MDQtMTAuMjM2LTMuOTA0LTE0LjE0MywwYy0zLjkwNSwzLjkwNS0zLjkwNSwxMC4yMzcsMCwxNC4xNDNsMjguMjc5LDI4LjI3OSAgICBjMy45MDgsMy45MDUsMTAuMjM3LDMuOTA0LDE0LjE0MywwQzMwMC40MDYsODIuNTk2LDMwMC40MDYsNzYuMjY0LDI5Ni41MDEsNzIuMzU4eiIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojMjAyMDk1IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPgoJPC9nPgo8L2c+PC9nPiA8L3N2Zz4=" />
+                                        </div>
+                                        <div class="col-md-10 text-left">
+                                            <div class="card-body p-2">
+                                                <h6>Kudos</h6>
+                                                <p class="card-text text-small-para"><small class="text-muted">Kudos you have made on THC</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6 col-sm-12">
+                            <a href="/settings/access-data/connections">
+                                <div class="card mb-3 info-type-box">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-2 text-center my-auto p-2">
+                                            <img class="img-fluid" src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIC00MCA1MTIgNTExIiB3aWR0aD0iNTEyIj48Zz48cGF0aCBkPSJtNDk3IDE5My4zMDA3ODFoLTQwLjE2Nzk2OWMtMS4yMTQ4NDMgMC0yLjQxNzk2OS4wNTA3ODEtMy42MTMyODEuMTI4OTA3LTkuMDIzNDM4LTguMDUwNzgyLTE5LjAwMzkwNi0xNC42OTkyMTktMjkuNjc5Njg4LTE5LjgyMDMxMyAyNC4zNDc2NTctMTcuMjkyOTY5IDQwLjI2MTcxOS00NS43MTA5MzcgNDAuMjYxNzE5LTc3Ljc3NzM0NCAwLTUyLjU2NjQwNi00Mi43NjU2MjUtOTUuMzMyMDMxLTk1LjMzMjAzMS05NS4zMzIwMzEtNTIuNTcwMzEyIDAtOTUuMzM1OTM4IDQyLjc2NTYyNS05NS4zMzU5MzggOTUuMzMyMDMxIDAgMjUuMjYxNzE5IDkuODgyODEzIDQ4LjI1NzgxMyAyNS45NzY1NjMgNjUuMzMyMDMxaC03MC4xNDg0MzdjMTYuMDkzNzUtMTcuMDc0MjE4IDI1Ljk3MjY1Ni00MC4wNzAzMTIgMjUuOTcyNjU2LTY1LjMzMjAzMSAwLTUyLjU2NjQwNi00Mi43NjU2MjUtOTUuMzMyMDMxLTk1LjMzMjAzMi05NS4zMzIwMzEtNTIuNTY2NDA2IDAtOTUuMzM1OTM3IDQyLjc2NTYyNS05NS4zMzU5MzcgOTUuMzMyMDMxIDAgMjkuNDgwNDY5IDEzLjQ1MzEyNSA1NS44NzUgMzQuNTM5MDYzIDczLjM3ODkwNy0xNC42MDE1NjMgNS40NTcwMzEtMjguMTQ4NDM4IDEzLjYxNzE4Ny00MC4wMjczNDQgMjQuMjE4NzUtMS4xOTUzMTMtLjA3ODEyNi0yLjM5NDUzMi0uMTI4OTA3LTMuNjA5Mzc1LS4xMjg5MDdoLTQwLjE2Nzk2OWMtOC4yODUxNTYgMC0xNSA2LjcxNDg0NC0xNSAxNXY4MC4zMzIwMzFjMCA4LjI4NTE1NyA2LjcxNDg0NCAxNSAxNSAxNWgxLjA2NjQwNnYxMTMuNTM1MTU3YzAgOC4yODEyNSA2LjcxNDg0NCAxNSAxNSAxNWg0NDkuODY3MTg4YzguMjg1MTU2IDAgMTUtNi43MTg3NSAxNS0xNXYtMTEzLjUzNTE1N2gxLjA2NjQwNmM4LjI4NTE1NiAwIDE1LTYuNzE0ODQzIDE1LTE1di04MC4zMzIwMzFjMC04LjI4NTE1Ni02LjcxNDg0NC0xNS0xNS0xNXptLTE1IDgwLjMzMjAzMWgtMjUuMTY3OTY5Yy0xMy44NzUgMC0yNS4xNjc5NjktMTEuMjg5MDYyLTI1LjE2Nzk2OS0yNS4xNjc5NjggMC0xMy44NzUgMTEuMjkyOTY5LTI1LjE2NDA2MyAyNS4xNjc5NjktMjUuMTY0MDYzaDI1LjE2Nzk2OXptLTE3OC44NjcxODgtMTc3LjgwMDc4MWMwLTM2LjAyMzQzNyAyOS4zMDg1OTQtNjUuMzMyMDMxIDY1LjMzMjAzMi02NS4zMzIwMzEgMzYuMDIzNDM3IDAgNjUuMzM1OTM3IDI5LjMwODU5NCA2NS4zMzU5MzcgNjUuMzMyMDMxIDAgMzYuMDI3MzQ0LTI5LjMwODU5MyA2NS4zMzIwMzEtNjUuMzMyMDMxIDY1LjMzMjAzMS0zNi4wMjczNDQgMC02NS4zMzU5MzgtMjkuMzA0Njg3LTY1LjMzNTkzOC02NS4zMzIwMzF6bS0xNDMuNTMxMjUtNjUuMzMyMDMxYzM2LjAyMzQzOCAwIDY1LjMzMjAzMiAyOS4zMDg1OTQgNjUuMzMyMDMyIDY1LjMzMjAzMSAwIDM2LjAyMzQzOC0yOS4zMDg1OTQgNjUuMzMyMDMxLTY1LjMzMjAzMiA2NS4zMzIwMzEtMzYuMDI3MzQzIDAtNjUuMzM1OTM3LTI5LjMwNDY4Ny02NS4zMzU5MzctNjUuMzMyMDMxIDAtMzYuMDIzNDM3IDI5LjMwODU5NC02NS4zMzIwMzEgNjUuMzM1OTM3LTY1LjMzMjAzMXptLTEyOS42MDE1NjIgMTkyLjgwMDc4MWgyNS4xNjc5NjljMTMuODc1IDAgMjUuMTY3OTY5IDExLjI4OTA2MyAyNS4xNjc5NjkgMjUuMTY3OTY5IDAgMTMuODc1LTExLjI5Mjk2OSAyNS4xNjQwNjItMjUuMTY3OTY5IDI1LjE2NDA2MmgtMjUuMTY3OTY5em0xNi4wNjY0MDYgODAuMzMyMDMxaDkuMTAxNTYzYzMwLjQxNzk2OSAwIDU1LjE2Nzk2OS0yNC43NDYwOTMgNTUuMTY3OTY5LTU1LjE2Nzk2OCAwLTE2Ljg0Mzc1LTcuNjAxNTYzLTMxLjk0MTQwNi0xOS41MzkwNjMtNDIuMDY2NDA2aC4zNTU0NjljMTUuNTAzOTA2LTkuOTE3OTY5IDMzLjUzNTE1Ni0xNS4yMzA0NjkgNTIuMzgyODEyLTE1LjIzMDQ2OWgxNDIuODg2NzE5Yy0yNy43NTc4MTMgMjMuMzk4NDM3LTQ1LjQyMTg3NSA1OC40MDYyNS00NS40MjE4NzUgOTcuNDY0ODQzdjExMy41MzUxNTdoLTEzMC42Njc5Njl2LTY1LjMzNTkzOGMwLTguMjgxMjUtNi43MTQ4NDMtMTUtMTUtMTUtOC4yODEyNSAwLTE1IDYuNzE4NzUtMTUgMTV2NjUuMzMyMDMxaC0zNC4yNjU2MjV6bTQxOS44NjcxODggOTguNTMxMjVoLTM0LjI2OTUzMnYtNjUuMzMyMDMxYzAtOC4yODEyNS02LjcxNDg0My0xNS0xNS0xNS04LjI4MTI1IDAtMTUgNi43MTg3NS0xNSAxNXY2NS4zMzIwMzFoLTEzMC42NjQwNjJ2LTExMy41MzEyNWMwLTUzLjc0MjE4NyA0My43MjI2NTYtOTcuNDY0ODQzIDk3LjQ2ODc1LTk3LjQ2NDg0MyAxOC45MzM1OTQgMCAzNy4wMzkwNjIgNS4zNTkzNzUgNTIuNTgyMDMxIDE1LjM1OTM3NS0xMS44NTE1NjIgMTAuMTI4OTA2LTE5LjM4MjgxMiAyNS4xNjQwNjItMTkuMzgyODEyIDQxLjk0MTQwNiAwIDMwLjQxNzk2OSAyNC43NDYwOTMgNTUuMTY0MDYyIDU1LjE2Nzk2OSA1NS4xNjQwNjJoOS4wOTc2NTZ6bTAgMCIgZGF0YS1vcmlnaW5hbD0iIzAwMDAwMCIgY2xhc3M9ImFjdGl2ZS1wYXRoIiBzdHlsZT0iZmlsbDojMjAyMDk1IiBkYXRhLW9sZF9jb2xvcj0iIzAwMDAwMCI+PC9wYXRoPjwvZz4gPC9zdmc+" />
+                                        </div>
+                                        <div class="col-md-10 text-left">
+                                            <div class="card-body p-2">
+                                                <h6>Connections</h6>
+                                                <p class="card-text text-small-para"><small class="text-muted">Connections you have made on THC</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 col-sm-12">
+                            <a href="/settings/profile">
+                                <div class="card mb-3 info-type-box">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-2 text-center my-auto p-2">
+                                            <img class="img-fluid" src="data:image/svg+xml;base64,
+PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgd2lkdGg9IjUxMiI+PGc+PHBhdGggZD0ibTUxMiAyNTZjMC0xNDEuNDg4MjgxLTExNC40OTYwOTQtMjU2LTI1Ni0yNTYtMTQxLjQ4ODI4MSAwLTI1NiAxMTQuNDk2MDk0LTI1NiAyNTYgMCAxNDAuMjM0Mzc1IDExMy41MzkwNjIgMjU2IDI1NiAyNTYgMTQxLjg3NSAwIDI1Ni0xMTUuMTIxMDk0IDI1Ni0yNTZ6bS0yNTYtMjI2YzEyNC42MTcxODggMCAyMjYgMTAxLjM4MjgxMiAyMjYgMjI2IDAgNDUuNTg1OTM4LTEzLjU1ODU5NCA4OS40MDIzNDQtMzguNzAzMTI1IDEyNi41MTU2MjUtMTAwLjk2ODc1LTEwOC42MDkzNzUtMjczLjQ0MTQwNi0xMDguODA0Njg3LTM3NC41OTM3NSAwLTI1LjE0NDUzMS0zNy4xMTMyODEtMzguNzAzMTI1LTgwLjkyOTY4Ny0zOC43MDMxMjUtMTI2LjUxNTYyNSAwLTEyNC42MTcxODggMTAxLjM4MjgxMi0yMjYgMjI2LTIyNnptLTE2OC41ODU5MzggMzc2LjVjODkuNzczNDM4LTEwMC42OTUzMTIgMjQ3LjQyMTg3Ni0xMDAuNjcxODc1IDMzNy4xNjc5NjkgMC05MC4wNzQyMTkgMTAwLjc3MzQzOC0yNDcuMDU0Njg3IDEwMC44MDQ2ODgtMzM3LjE2Nzk2OSAwem0wIDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzIwMjA5NSIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48cGF0aCBkPSJtMjU2IDI3MWM0OS42MjUgMCA5MC00MC4zNzUgOTAtOTB2LTMwYzAtNDkuNjI1LTQwLjM3NS05MC05MC05MHMtOTAgNDAuMzc1LTkwIDkwdjMwYzAgNDkuNjI1IDQwLjM3NSA5MCA5MCA5MHptLTYwLTEyMGMwLTMzLjA4NTkzOCAyNi45MTQwNjItNjAgNjAtNjBzNjAgMjYuOTE0MDYyIDYwIDYwdjMwYzAgMzMuMDg1OTM4LTI2LjkxNDA2MiA2MC02MCA2MHMtNjAtMjYuOTE0MDYyLTYwLTYwem0wIDAiIGRhdGEtb3JpZ2luYWw9IiMwMDAwMDAiIGNsYXNzPSJhY3RpdmUtcGF0aCIgc3R5bGU9ImZpbGw6IzIwMjA5NSIgZGF0YS1vbGRfY29sb3I9IiMwMDAwMDAiPjwvcGF0aD48L2c+IDwvc3ZnPg==" />
+                                        </div>
+                                        <div class="col-md-10 text-left">
+                                            <div class="card-body p-2">
+                                                <h6>Profile Information</h6>
+                                                <p class="card-text text-small-para"><small class="text-muted">Profile data on THC account</small></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+@endsection

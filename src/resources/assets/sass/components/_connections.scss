@@ -1,0 +1,87 @@
+.connections {
+  .favorite-connections {
+    padding: 10px 0;
+  }
+  .add-connection {
+    position: relative;
+    padding: 0 10px 0 80px;
+    height: 64px;
+    line-height: 64px;
+    color: $primary;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    .dotted-circle {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  .mutual-connection {
+    line-height: 64px;
+    color: $primary;
+    text-align: right;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  .dotted-circle {
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+    border-radius: 100%;
+    border: dotted 1px $primary;
+    color: $primary;
+    text-align: center;
+  }
+  .mutual-connection {
+    margin: 0 8px;
+  }
+}
+
+.connection-item {
+  display: flex;
+  margin-left: -10px;
+  height: 56px;
+  padding: 8px;
+  line-height: 40px;
+  font-size: 14px;
+  color: $primary;
+  font-weight: bold;
+  white-space: nowrap;
+  &.is-selected {
+    .image:after {
+      font-family: 'Font Awesome 5 Free';
+      content: "\f00c";
+      display: block;
+      width: 100%; height: 100%;
+      position: absolute;
+      top: 0; left: 0;
+      background-color: $purple-opacity;
+      border-radius: 100%;
+      text-align: center;
+      color: $white;
+      font-size: 1.2rem;
+    }
+  }
+  &.is-active,
+  &:hover {
+    background-color: $white;
+    .connection-item-more {
+      display: flex;
+    }
+  }
+  .image {
+    margin-right: 10px;
+  }
+  .connection-item-profile {
+    width: 100%;
+  }
+  .connection-item-more {
+    display: none;
+    align-items: center;
+  }
+  .icon {
+    padding: 0 .5rem;
+    color: $grey;
+  }
+}

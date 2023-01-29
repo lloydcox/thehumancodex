@@ -1,0 +1,101 @@
+.user-page {
+  display: block;
+  background-color: $body-background;
+}
+#user_profile .section{
+  padding-top: 2px;
+}
+#user_profile .section-title{
+  margin-bottom: 1.5rem;
+}
+#user_profile .moment-count{
+  color: #30c1d5;
+  font-size: 15px;
+  font-weight: bold;
+}
+#user_profile .card{
+  box-shadow: 0px 3px 6px #00000040;
+}
+#user_profile .moment-card{
+  height: 120px;
+}
+#user_profile hr{
+  border-color: #6c757d;
+  background-color: #6c757d;
+  border: none;
+  display: block;
+  height: 1px;
+  opacity: 0.7;
+  margin: 0px;
+}
+#user_profile .moment-title{
+  color: #2f2f2f;
+  font-weight: bold;
+  height: 22px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#user_profile .moment-card .card-header{
+  background-color: #efeff5;
+}
+#user_profile .moment-card .card-body{
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+#user_profile .moment-description{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  color: #2f2f2f;
+  margin:0px;
+}
+#user_profile .moment-link{
+  margin-top: 0px;
+  font-size: 13px;
+  color: #30c1d5;
+}
+.small-text{
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 0px;
+}
+.color-box{
+  height: 25px;
+  border: 1px solid $thc;
+  border-radius: 1px;
+  box-shadow: 0px 2px 4px #00000040;
+}
+#chart_wrapper{
+  max-height: 250px;
+}
+.chartjs-render-monitor {
+  background: url('./../../../../storage/app/public/images/user/12/1665755876.png');
+  // background: url('<?=php echo $chartImage; ?>'); 
+  background-repeat: no-repeat;
+  background-size: 105px;
+  background-position: center;
+  height: 210px;
+  width: 210px;
+  border-radius: 25%;
+}
+
+.text-small-para{
+  font-size: small;
+  margin-bottom: 0px;
+  line-height: 1.5;
+}
+.line-height-none{
+  line-height: unset;
+}
+.info-type-box{
+  border: #1c1c1c;
+  border-radius: 5px;
+  box-shadow: 0px 1px 2px #00000040;
+}
+.info-type-box:hover{
+  border: #000000;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px #00000040;
+}

@@ -1,0 +1,8 @@
+.is-text-icon {
+  width: auto;
+  margin-right: 8px;
+  margin-left: 8px;
+  &:first-child {
+    margin-left: 0;
+  }
+}

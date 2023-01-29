@@ -1,0 +1,6 @@
+# requires node.js
+# @see https://www.npmjs.com/package/http-server
+# ----------------------------------------------------
+# run this command in terminal or powershell 
+
+npx http-server -c-1 .

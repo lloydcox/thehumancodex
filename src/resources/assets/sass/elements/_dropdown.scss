@@ -1,0 +1,17 @@
+.thc-dropdown {
+  position: relative;
+  .thc-dropdown-trigger {
+    font-size: 12px;
+    width: 20px;
+    text-align: right;
+  }
+  .thc-dropdown-content {
+    position: absolute;
+    top: 30px;
+    right: 0;
+    .button {
+      margin-bottom: 0.3rem;
+      float: right;
+    }
+  }
+}

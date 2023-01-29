@@ -1,0 +1,18 @@
+.card-content {
+  padding: 1rem;
+}
+
+.card {
+  margin-bottom: 1rem;
+  &.is-transparent {
+    background-color: transparent;
+    box-shadow: none;
+    .card-content {
+      padding: 0;
+      margin: 1rem 0;
+    }
+  }
+  &.is-rounded {
+    border-radius: 5px;
+  }
+}

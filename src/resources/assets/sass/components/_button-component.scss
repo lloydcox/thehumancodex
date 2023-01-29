@@ -1,0 +1,44 @@
+.button-component {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  margin: 0.5rem 0;
+  &--is-disabled {
+    cursor: not-allowed;
+    * {
+      color: $grey-light !important;
+      opacity: 0.5;
+    }
+  }
+  &--has-icon,
+  &--has-image {
+    padding-left: 56px;
+  }
+  &__image,
+  &__icon {
+    position: absolute;
+    left: 0;
+    width: 40px;
+    height: 40px;
+  }
+  &__icon {
+    text-align: center;
+    vertical-align: center;
+    color: $primary;
+  }
+  &__name {
+    color: $primary;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    &--tall {
+      min-height: 40px;
+      line-height: 40px;
+    }
+  }
+  &__description {
+    color: $grey-light;
+    font-size: 12px;
+    font-weight: normal;
+  }
+}

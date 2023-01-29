@@ -1,0 +1,26 @@
+.public-container {
+  display: block;
+  background-color: $body-background;
+  min-height: calc(100vh - #{$small-footer-height});
+  &.is-white {
+    background-color: $white;
+  }
+}
+
+.public-header {
+  height: $page-header-height;
+  text-align: center;
+  line-height: $page-header-height;
+  h2 {
+    font-size: 16px;
+    margin: 0;
+  }
+}
+
+.public-footer {
+  height: $small-footer-height;
+  text-align: center;
+  line-height: $small-footer-height;
+  font-size: 12px;
+  color: $grey-lighter;
+}

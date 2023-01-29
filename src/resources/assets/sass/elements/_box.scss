@@ -1,0 +1,42 @@
+.box-container {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  &.is-narrow {
+    max-width: 480px;
+  }
+  &.has-no-footer .box {
+    padding-bottom: 20px;
+  }
+}
+
+.box {
+  position: relative;
+  box-shadow: $default-shadow;
+  border-radius: 2px;
+  margin-bottom: 1rem;
+  padding: 48px 32px;
+
+  .box-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    .progress {
+      height: 2px;
+      background-color: $primary-light;
+      transition: all 0.5s;
+    }
+  }
+
+  .box-footer {
+    height: 48px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    line-height: 48px;
+    background-color: $white-ter;
+  }
+}

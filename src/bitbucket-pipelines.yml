@@ -1,0 +1,6 @@
+pipelines:
+  branches:
+    master:
+    - step:
+        script:
+          - ssh -tt $TEST_USER@$TEST_IP "cd /var/www/html/ && git pull"

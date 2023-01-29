@@ -1,0 +1,16 @@
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+.drop-enter-active {
+  transition: all .2s;
+  margin-top: 0;
+}
+.drop-enter {
+  margin-top: -20px;
+  opacity: 0;
+}
+

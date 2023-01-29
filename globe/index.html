@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Human Codex</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Oswald:400,600" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/lib/Detector.js" type="text/javascript"></script>
+    <script src="js/lib/three.min.js" type="text/javascript"></script>
+    <script src="js/lib/globe.js" type="text/javascript"></script>
+</head>
+    <body data-ng-app="globe.ui">
+        <header>
+            <div class="nav">
+                <section class="brand">
+                    <a>
+                        <img src="img/thc-logo-multiply.png" alt="The Human Codex" class="brand-image">
+                    </a>
+                </section>
+            </div>
+        </header>
+        <article class="">
+            <div id="globe"><div class="spinner">
+                <div class="bounce1"></div>
+                <div class="bounce2"></div>
+                <div class="bounce3"></div>
+              </div></div>
+            <div class="point-template" data-lat="0" data-lon="0">
+                <div>
+                    <div>
+                        <div class="point-wrapper">
+                            <div class="point-marker">
+                                <img src="/globe/img/pin.svg" alt="Poznań">
+                            </div>
+                            <div class="point-description">
+                                <h3 class="point-title"></h3>
+                                <p class="point-content"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <footer>
+            <div class="container">
+                <h4 class="text-center text-muted">Copyrioght (c) 2018 <br /><span class="small">Author: <strong>Kamil Kulinski</strong></span></h4>
+            </div>
+        </footer>
+    </body>
+
+    <script>
+        (function(){
+    // if (location == "http://testing-thc.com/map") {
+        function runGlobe(){
+            var container = document.getElementById('globe');
+            var globe = window.globe = new DAT.Globe(container,
+                {
+                        imgDir: '/img/'
+                    ,   textureColor:'#4f2c78' /* CSS colors */
+                    // ,   texture: 'GlobeLaunchBlankAlternativeBig.svg'
+                }
+            );
+            globe.callback = function(){
+                var spinner = document.querySelector('#globe .spinner');
+                if(spinner) spinner.remove();
+                for(var i = 0, item, items = document.querySelectorAll('#globe > .point'); item = items[i]; i++)
+                {
+                    globe.addPin(item);
+                }
+                globe.animate();
+            };
+
+            for(var i = 0, item, items = document.querySelectorAll('#globe .point-wrapper'); item = items[i]; i++)
+            {
+                var marker = item.getElementsByClassName('point-marker')[0].getElementsByTagName('IMG')[0];
+                marker.onclick = function(e){
+                    this.classList.toggle('open');
+                }.bind(item);
+            }
+        }
+
+        function ajax(url, reqType)
+        {
+            if( !(this instanceof ajax) )
+            return new ajax(url, reqType);
+            var xhttp = new XMLHttpRequest();
+
+            var success = function(){};
+            var error = function(){};
+            xhttp.onreadystatechange = function() 
+            {
+                if (this.readyState == 4 && this.status == 200) 
+                {
+                    success(this.responseText,this,this.status);
+                }
+                else
+                {
+                    error(this.responseText,this,this.status);
+                }
+            };
+            xhttp.open(reqType || 'GET', url, true);
+            // xhttp.setRequestHeader('Accept', 'application/json');
+            xhttp.send();
+
+            this.success = function(f){success = f;}; // i can smell the loss of context
+            this.error = function(f){error = f;}; // same as above
+            
+            return this;
+        }
+
+        function initialize() {
+            ajax('./items.json').success(function(data){
+                data = JSON.parse(data);
+                if(data.posts)
+                {
+                    var template = document.querySelector('.point-template'), container = document.getElementById('globe');
+                    template.classList.add('point');
+                    template.classList.remove('point-template');
+                    for(var i = 0, item; item = data.posts[i]; i++)
+                    {
+                        var elem = template.cloneNode(true);
+                        elem.querySelector('.point-title').innerHTML = item.title;
+                        elem.querySelector('.point-content').innerHTML = item.content;
+                        // elem.querySelector('.point-marker img').setAttribute('src','path/to/your/image/here.jpg');
+                        try
+                        {
+                            elem.setAttribute('data-lon',item.position.lon || 0);
+                            elem.setAttribute('data-lat',item.position.lat || 0);
+                        }
+                        catch(ex)
+                        {
+                            console.log([ex, 'No position']);
+                        }
+                        container.appendChild(elem);
+                    }
+                    
+                    template.classList.add('hide');
+                    template.style.display = 'none';
+                    runGlobe();
+                }
+            });
+        }
+
+        window.onload = initialize;
+    // }
+        })();
+    </script>
+</html>

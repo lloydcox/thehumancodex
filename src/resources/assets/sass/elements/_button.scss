@@ -1,0 +1,57 @@
+$button-padding-vertical: calc(0.5em - #{$button-border-width});
+$button-padding-horizontal: 0.75em;
+
+.button {
+  text-align: center;
+  height: 48px;
+  font-size: 14px;
+  line-height: 24px;
+  padding-bottom: $button-padding-vertical;
+  padding-left: $button-padding-horizontal;
+  padding-right: $button-padding-horizontal;
+  padding-top: $button-padding-vertical;
+  color: $grey;
+  border: 0;
+  font-family: $ubuntu-font;
+
+  &:not(.is-mobile) {
+    @include mobile {
+      min-width: auto;
+      width: calc(100% - 2rem);
+    }
+  }
+
+  &.is-primary {
+    color: $primary;
+    background-color: $primary-light;
+  }
+  &.is-wide {
+    width: 100%;
+  }
+  &.is-small {
+    height: 28px;
+    min-width: auto;
+    line-height: 20px;
+  }
+  &.is-circle {
+    width: 48px;
+    min-width: 48px;
+  }
+  &.is-circle.is-small {
+    width: 28px;
+    min-width: 28px;
+  }
+  &[disabled] {
+    background-color: rgba(153, 153, 153, 0.1) !important;
+    color: $grey-lighter !important;
+    opacity: 1;
+  }
+  .icon {
+    font-size: 16px;
+    margin: 0 6px 0 0 !important;
+  }
+}
+
+.button:not(.is-flat) {
+  box-shadow: $button-shadow;
+}

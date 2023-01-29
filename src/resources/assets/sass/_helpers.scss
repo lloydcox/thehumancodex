@@ -1,0 +1,31 @@
+.has-cursor-pointer {
+  cursor: pointer;
+}
+
+.has-font-sans {
+  font-family: $open-sans-font;;
+}
+
+.has-padding-1 {
+  padding: 1rem 0;
+}
+
+.has-padding-2 {
+  padding: 2rem 0;
+}
+
+.has-margin-1 {
+  margin: 1rem 0;
+}
+
+.has-margin-2 {
+  margin: 2rem 0;
+}
+
+.is-transparent {
+  background-color: transparent;
+}
+
+.is-white-bis-hover:hover {
+  background-color: $white-bis;
+}

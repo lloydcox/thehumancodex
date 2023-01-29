@@ -1,0 +1,22 @@
+.section {
+  padding: 3rem 0;
+}
+
+.section-name {
+  font-size: 0.75rem;
+  color: $grey-light;
+  margin-bottom: 0.5rem;
+}
+
+.spacer {
+  margin: .8rem 0;
+  &.is-large {
+    margin: 1.5rem 0;
+  }
+}
+
+.section:after, .spacer:after {
+  content: '';
+  display: block;
+  clear: both;
+}
