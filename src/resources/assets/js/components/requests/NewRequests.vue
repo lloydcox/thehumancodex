@@ -2,7 +2,7 @@
   <div class="new-requests spacer is-large has-text-left" v-if="requests.length">
     <h5 class="is-size-7 has-text-grey-light">New requests: {{ requests.length }}</h5>
     <transition-group name="fade" mode="out-in">
-      <new-requests-item :request="request" v-for="(request, key) in requests" :key="requests.key"></new-requests-item>
+      <new-requests-item :request="request" v-for="(request, key) in requests" :key="request.key"></new-requests-item>
     </transition-group>
   </div>
 </template>
